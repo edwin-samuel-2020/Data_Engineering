@@ -1134,6 +1134,17 @@ import undetected_chromedriver as uc
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
+import urllib.request
+
+# URL of the file to download
+url = 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+
+# Local path to save the downloaded file
+local_file_path = '/tmp/google-chrome-stable_current_amd64.deb'
+
+# Download the file
+urllib.request.urlretrieve(url, local_file_path)
+
 names, locations, typess, pricess, reviews, ratings, commentss, images = [], [], [], [], [], [], [], []
 
 current, missed = 1, 0
@@ -1146,17 +1157,26 @@ for hotel_link in all_links:
     # print(hotel_link)
 
     # Initial code
-    chrome_options = Options()
-    chrome_options.headless = False
+    # chrome_options = Options()
+    # chrome_options.headless = False
+    # driver = uc.Chrome(options=chrome_options)
 
     # Poornesh putty code
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")
+    options.add_argument('--disable-dev-shm-usage')
+    options.add_argument("--no-sandbox")
+    
+    driver = webdriver.Chrome(
+        options=options
+    )
 
     # # Pooja's code
     # chrome_options = uc.ChromeOptions()
     # chrome_options.add_argument('--headless')
     # chrome_options.headless = True
 
-    driver = uc.Chrome(options=chrome_options)
+
     driver.get(hotel_link)
     time.sleep(2)
 
