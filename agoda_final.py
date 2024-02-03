@@ -1126,14 +1126,6 @@ print("")
 # all_link = soup.find_all('a',class_='PropertyCard__Link')
 # print(all_link)
 
-import time
-from bs4 import BeautifulSoup
-import lxml
-import requests
-#import undetected_chromedriver as uc
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-
 import urllib.request
 
 # URL of the file to download
@@ -1144,6 +1136,16 @@ local_file_path = '/tmp/google-chrome-stable_current_amd64.deb'
 
 # Download the file
 urllib.request.urlretrieve(url, local_file_path)
+
+import time
+from bs4 import BeautifulSoup
+import lxml
+import requests
+#import undetected_chromedriver as uc
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
+
 
 names, locations, typess, pricess, reviews, ratings, commentss, images = [], [], [], [], [], [], [], []
 
