@@ -9,7 +9,7 @@ visual_list = []
 
 for i in range(1,10):
 
-    with open(f'trivago{i}.html', 'r', encoding='utf-8') as file:
+    with open(f'trivago_final_{i}.html', 'r', encoding='utf-8') as file:
         data = file.read()
 
     soup = BeautifulSoup(data, 'lxml')
