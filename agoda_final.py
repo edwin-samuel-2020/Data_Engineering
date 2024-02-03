@@ -1130,7 +1130,7 @@ import time
 from bs4 import BeautifulSoup
 import lxml
 import requests
-import undetected_chromedriver as uc
+#import undetected_chromedriver as uc
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
